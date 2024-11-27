@@ -231,13 +231,13 @@ with col2:
         if st.button('Tutup'): st.rerun()
     @st.dialog("Error")
     def sukses(nama): 
-        st.success(f"Pesan '{nama}' berhasil dikirim", icon='✅')
+        st.success(f"Komentar '{nama}' berhasil dikirim", icon='✅')
         #st.session_state.submit_disabled = False
         if st.button('Tutup'): st.rerun()
 
     # Div Form
     with st.form(key="comment"):
-      st.write("Kirimkan pesan anda") 
+      st.write("Kirimkan komentar anda") 
       komen_avatar = st.pills("Avatar", avatar)
       komen_nama = st.text_input(
           "Nama",
@@ -326,6 +326,30 @@ with col2:
     # form nama entry.262422911
     # form catatan entry.2138165091 
     # form kehadiran entry.301499260_sentinel
+    
+    st.ballon()
+    with st.container():
+        if 'countbalon' not in st.session_state:
+          st.session_state.countbalon = 0
+        if 'balonkah' not in st.session_state:
+          st.session_state.balonkah = "Balonnya a?"
+
+        #st.write(st.session_state.countbalon)
+        #st.write(st.session_state.balonkah)
+
+        if st.button(st.session_state.balonkah, use_container_width=True):
+          st.session_state.countbalon += 1
+          #balonkah = "Balon lagi?"
+          if st.session_state.countbalon == 1: st.session_state.balonkah = "Balon lagi a?"
+          if st.session_state.countbalon> 2: st.session_state.balonkah = "Balonnya kok terus"
+          if st.session_state.countbalon> 4: st.session_state.balonkah = "Balonnya udah yaa"
+          if st.session_state.countbalon> 6: st.session_state.balonkah = "Balonnya mulai capek nih"
+          if st.session_state.countbalon> 8: st.session_state.balonkah = "Balonnya udahan oi 😭"
+          if st.session_state.countbalon> 10:st.session_state.balonkah  = "Balon terosssss"
+          if st.session_state.countbalon> 15:st.session_state.balonkah  = "Terserahlah, pencet aja terus"
+          if st.session_state.countbalon> 30:st.session_state.balonkah  = "Si bocah masih di sini 😭, pulanggg"
+
+          st.balloons()
 
 
   # Div end
