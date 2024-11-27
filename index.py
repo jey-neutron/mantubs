@@ -308,7 +308,7 @@ with col2:
         <div class="pfp komen-text">
           <div class="pfp komen-avatar"> {pp} </div>
           <div class="pfp-text" style="line-height:normal">
-            <span style="font-size:0.7rem" >@{df.iloc[i].Nama} <span style="color:lightgrey" >• 
+            <span style="font-size:0.7rem" >@{df.iloc[i].Nama.replace(" ","_")} <span style="color:lightgrey" >• 
               {datetime.datetime.strptime(str(df.iloc[i].Timestamp), "%d/%m/%Y %H:%M:%S").strftime("%d %b")}
             </span></span> <br>
             {df.iloc[i].Catatan} <br>
