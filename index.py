@@ -327,7 +327,7 @@ with col2:
     # form catatan entry.2138165091 
     # form kehadiran entry.301499260_sentinel
     
-    st.ballon()
+    st.balloons()
     with st.container():
         if 'countbalon' not in st.session_state:
           st.session_state.countbalon = 0
